@@ -1,7 +1,7 @@
 [workspace]
 authors = ["Ibrahim Ibrahimov <ibrahimkhaliloglu@gmail.com>"]
 channels = ["conda-forge"]
-name = "ult-to-speech-pytorch"
+name = "ult2mel-2DCNN"
 platforms = ["linux-64"]
 version = "0.1.0"
 
