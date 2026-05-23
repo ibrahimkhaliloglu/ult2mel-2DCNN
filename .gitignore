@@ -1,0 +1,8 @@
+.pixi/*
+!.pixi/config.toml
+mlruns/
+models/
+predictions/
+
+__pycache__/
+*.pyc

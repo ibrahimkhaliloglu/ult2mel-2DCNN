@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "ult2mel-2DCNN"
+authors:
+  - family-names: Ibrahimov
+    given-names: Ibrahim
+repository-code: "https://github.com/ibrahimkhaliloglu/ult-to-speech-pytorch"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Conformer-based Ultrasound-to-Speech Conversion"
+  authors:
+    - family-names: Ibrahimov
+      given-names: Ibrahim
+    - family-names: Zainkó
+      given-names: Csaba
+    - family-names: Gosztolya
+      given-names: Gábor
+  booktitle: "Interspeech 2025"
+  year: 2025
+  pages: "5578--5582"
+  doi: "10.21437/Interspeech.2025-2147"

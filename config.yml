@@ -1,0 +1,36 @@
+data:
+  data_dir: "./TaL80/core"
+  h5_dir: "./tal_cache"
+  speakers: ["01fi", "02fe", "03mn", "04me"]
+  n_lines: 64
+  n_pixels: 842
+  n_pixels_reduced: 128
+  n_melband: 80
+  sample_rate: 22050
+  n_fft: 1024
+  win_size: 1024
+  fmin: 0.0
+  fmax: 8000.0
+  test_suffix_range: [4, 14]
+  train_split: 0.9
+
+model:
+  conv_filters: [30, 60, 90, 120]
+  kernel_size: 13
+  dense_units: 1000
+  dropout_rate: 0.2
+  l1_reg: 0.00001
+  l1_reg_dense: 0.000005
+
+training:
+  epochs: 50
+  batch_size: 128
+  learning_rate: 0.1
+  momentum: 0.1
+  nesterov: true
+  early_stop_patience: 3
+  early_stop_min_delta: 0.0001
+  lr_reduce_patience: 2
+  lr_reduce_factor: 0.5
+  lr_min: 0.0001
+  output_dir: "models"
