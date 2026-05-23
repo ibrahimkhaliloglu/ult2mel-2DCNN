@@ -22,15 +22,9 @@ ult2mel-2DCNN/
     └── experiment.py              # LightningModule (training / val / test logic)
 ```
 
-## 1. Download the dataset
 
-More info on [how to download TaL80 corpus](https://ultrasuite.github.io/data/tal_corpus/#download). Chosen speaker IDs: `01fi`, `02fe`, `03mn`, `04me`. For training, we only utilize `aud`, `xaud`, `spo` tagged utterances.
 
-```bash
-rsync -av ultrasuite-rsync.inf.ed.ac.uk::tal-corpus/TaL80/core/{speaker_id} .
-```
-
-## 2. Set up the environment
+## 1. Set up the environment
 
 **With pixi:** install pixi via [the official instructions](https://pixi.prefix.dev/latest/installation/), then:
 
@@ -39,6 +33,14 @@ git clone https://github.com/ibrahimkhaliloglu/ult2mel-2DCNN.git
 cd ult2mel-2DCNN
 pixi install
 pixi s
+```
+
+## 2. Download the dataset
+
+More info on [how to download TaL80 corpus](https://ultrasuite.github.io/data/tal_corpus/#download). Chosen speaker IDs: `01fi`, `02fe`, `03mn`, `04me`. For training, we only utilize `aud`, `xaud`, `spo` tagged utterances.
+
+```bash
+rsync -av ultrasuite-rsync.inf.ed.ac.uk::tal-corpus/TaL80/core/{speaker_id} .
 ```
 
 ## 3. Configure the run
