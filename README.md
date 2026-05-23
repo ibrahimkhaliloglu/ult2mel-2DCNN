@@ -36,7 +36,7 @@ rsync -av ultrasuite-rsync.inf.ed.ac.uk::tal-corpus/TaL80/core/{speaker_id} .
 
 ```bash
 git clone https://github.com/ibrahimkhaliloglu/ult2mel-2DCNN.git
-cd ult-to-speech-pytorch
+cd ult2mel-2DCNN
 pixi install
 pixi s
 ```
