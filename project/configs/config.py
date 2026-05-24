@@ -18,7 +18,7 @@ class DataConfig(BaseModel):
     # Raw TaL corpus location
     data_dir: str = "./TaL80/core"
     # Where preprocessed HDF5 files are written (one per speaker)
-    h5_dir: str = "./tal_cache"
+    h5_dir: str = "./h5_TaL"
     speakers: List[str] = Field(default_factory=lambda: ["01fi"])
 
     # Ultrasound geometry
@@ -93,7 +93,7 @@ class Config(BaseModel):
     training: TrainingConfig = Field(default_factory=TrainingConfig)
 
     @model_validator(mode="after")
-    def check_cache_dir_not_same_as_data_dir(self) -> "Config":
+    def check_h5_dir_not_same_as_data_dir(self) -> "Config":
         if self.data.h5_dir == self.data.data_dir:
             raise ValueError("h5_dir must be different from data_dir")
         return self

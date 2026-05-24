@@ -1,6 +1,6 @@
 data:
   data_dir: "./TaL80/core"
-  h5_dir: "./tal_cache"
+  h5_dir: "./h5_TaL"
   speakers: ["01fi", "02fe", "03mn", "04me"]
   n_lines: 64
   n_pixels: 842

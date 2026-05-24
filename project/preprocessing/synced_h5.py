@@ -1,9 +1,9 @@
 """
-project/preprocessing/cache.py
+project/preprocessing/synced_h5.py
 
 Preprocesses raw TaL corpus files and saves one HDF5 (.h5) file per speaker.
 
-Cache layout (cache_dir/)
+H5 file layout (h5_dir/)
 --------------------------
 {speaker}.h5
   /ult          dataset  shape (N, n_lines, n_pixels_reduced)  dtype uint8

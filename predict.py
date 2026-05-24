@@ -171,8 +171,8 @@ def main(args):
     h5_path = h5_paths(cfg.data, args.speaker)
     if not h5_path.exists():
         raise SystemExit(
-            f"HDF5 cache not found at {h5_path}.\n"
-            f"Run `python main.py` once to build the cache for speaker {args.speaker}."
+            f"HDF5 file not found at {h5_path}.\n"
+            f"Run `python main.py` once to build the HDF5 file for speaker {args.speaker}."
         )
 
     utt, start, end = pick_utterance(h5_path, cfg, args.utterance, args.list)

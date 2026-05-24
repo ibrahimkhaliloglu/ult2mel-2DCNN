@@ -17,7 +17,7 @@ ult2mel-2DCNN/
     ├── datasets/dataset.py        # HDF5-backed Dataset + DataLoader builders
     ├── models/cnn.py              # UltMel2DCNN architecture
     ├── preprocessing/
-    │   ├── synced_h5.py           # Builds per-speaker HDF5 cache files
+    │   ├── synced_h5.py           # Builds per-speaker HDF5 files
     │   └── utils.py               # Signal processing helpers
     └── experiment.py              # LightningModule (training / val / test logic)
 ```
@@ -44,6 +44,11 @@ More info on [how to download TaL80 corpus](https://ultrasuite.github.io/data/ta
 rsync -av ultrasuite-rsync.inf.ed.ac.uk::tal-corpus/TaL80/core/{speaker_id} .
 ```
 
+> **Note:** Instead of building the HDF5 file from raw TaL corpus files, you can download
+> the preprocessed `.h5` files directly from
+> [ibrahimkhaliloglu/TaL80-UTI-mel-hdf5](https://huggingface.co/datasets/ibrahimkhaliloglu/TaL80-UTI-mel-hdf5)
+> on Hugging Face.
+
 ## 3. Configure the run
 
 Edit `config.yml` to point at your data and pick speakers:
@@ -51,7 +56,7 @@ Edit `config.yml` to point at your data and pick speakers:
 ```yaml
 data:
   data_dir: "./TaL80/core"     # where you downloaded the speakers
-  h5_dir:   "./tal_cache"      # where preprocessed caches will be written
+  h5_dir:   "./h5_TaL"      # where preprocessed h5 files will be written
   speakers: ["01fi", "02fe", "03mn", "04me"]
 training:
   epochs: 50
@@ -73,7 +78,7 @@ Useful flags:
 
 ```bash
 python main.py --accelerator cpu --devices auto    # no GPU
-python main.py --force-preprocess                  # rebuild the HDF5 cache
+python main.py --force-preprocess                  # rebuild the HDF5 file
 ```
 
 For each speaker you'll get a best checkpoint, a fitted scaler, and CSV logs under `models/`, plus an MLflow run in `./mlruns/`. The test set is evaluated automatically on the best checkpoint after training finishes.
