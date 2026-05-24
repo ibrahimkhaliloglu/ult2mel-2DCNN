@@ -22,11 +22,12 @@ ult2mel-2DCNN/
     └── experiment.py              # LightningModule (training / val / test logic)
 ```
 
-
-
 ## 1. Set up the environment
 
 **With pixi:** install pixi via [the official instructions](https://pixi.prefix.dev/latest/installation/), then:
+> **Note:** This environment is configured for `linux-64`. If you are on a different platform,
+> pixi will notify you during `pixi install` and you may need to add your platform to `pixi.toml`
+> under `platforms` before proceeding.
 
 ```bash
 git clone https://github.com/ibrahimkhaliloglu/ult2mel-2DCNN.git
